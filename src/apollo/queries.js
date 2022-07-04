@@ -3,7 +3,7 @@ import { FACTORY_ADDRESS, BUNDLE_ID } from '../constants'
 
 export const SUBGRAPH_HEALTH = gql`
   query health {
-    indexingStatusForCurrentVersion(subgraphName: "uniswap/uniswap-v2") {
+    indexingStatusForCurrentVersion(subgraphName: "simone1999/uniswap") {
       synced
       health
       chains {
@@ -14,34 +14,6 @@ export const SUBGRAPH_HEALTH = gql`
           number
         }
       }
-    }
-  }
-`
-
-export const V1_DATA_QUERY = gql`
-  query uniswap($date: Int!, $date2: Int!) {
-    current: uniswap(id: "1") {
-      totalVolumeUSD
-      totalLiquidityUSD
-      txCount
-    }
-    oneDay: uniswapHistoricalDatas(where: { timestamp_lt: $date }, first: 1, orderBy: timestamp, orderDirection: desc) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      txCount
-    }
-    twoDay: uniswapHistoricalDatas(
-      where: { timestamp_lt: $date2 }
-      first: 1
-      orderBy: timestamp
-      orderDirection: desc
-    ) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      txCount
-    }
-    exchanges(first: 200, orderBy: ethBalance, orderDirection: desc) {
-      ethBalance
     }
   }
 `
@@ -666,30 +638,6 @@ export const PAIR_DATA = (pairAddress, block) => {
         ...PairFields
       }
     }`
-  return gql(queryString)
-}
-
-export const MINING_POSITIONS = (account) => {
-  const queryString = `
-    query users {
-      user(id: "${account}") {
-        miningPosition {
-          id
-          user {
-            id
-          }
-          miningPool {
-              pair {
-                id
-                token0
-                token1
-              }
-          }
-          balance
-        }
-      }
-    }
-`
   return gql(queryString)
 }
 

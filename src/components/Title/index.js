@@ -51,7 +51,7 @@ export default function Title() {
             <img width={'24px'} src={Logo} alt="logo" />
           </UniIcon>
           {!below1080 && (
-            <img width={'84px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt="logo" />
+              <p style={{color: 'white'}}>ICECREAMSWAP</p>
           )}
         </RowFixed>
         {below1080 && (

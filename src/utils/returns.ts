@@ -4,8 +4,8 @@ import dayjs from 'dayjs'
 import { getShareValueOverTime } from '.'
 
 export const priceOverrides = [
-  '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', // USDC
-  '0x6b175474e89094c44da98b954eedeac495271d0f', // DAI
+  '0xcf2DF9377A4e3C10e9EA29fDB8879d74C27FCDE7', // USDC
+  '0xDe14b85cf78F2ADd2E867FEE40575437D5f10c06', // USDT
 ]
 
 interface ReturnMetrics {
@@ -28,7 +28,7 @@ interface Position {
   token1PriceUSD: number
 }
 
-const PRICE_DISCOVERY_START_TIMESTAMP = 1589747086
+const PRICE_DISCOVERY_START_TIMESTAMP = 0  // 1589747086
 
 function formatPricesForEarlyTimestamps(position): Position {
   if (position.timestamp < PRICE_DISCOVERY_START_TIMESTAMP) {
