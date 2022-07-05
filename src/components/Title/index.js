@@ -44,10 +44,10 @@ export default function Title() {
   const below1080 = useMedia('(max-width: 1080px)')
 
   return (
-    <TitleWrapper onClick={() => history.push('/')}>
+    <TitleWrapper onClick={() => window.location.href = 'https://app.icecreamswap.com'}>
       <Flex alignItems="center" style={{ justifyContent: 'space-between' }}>
         <RowFixed>
-          <UniIcon id="link" onClick={() => history.push('/')}>
+          <UniIcon id="link" href={"https://app.icecreamswap.com"}>
             <img width={'24px'} src={Logo} alt="logo" />
           </UniIcon>
           {!below1080 && (
