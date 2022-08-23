@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://gap6p22o38.execute-api.eu-west-1.amazonaws.com/subgraphs/name/simone1999/uniswap',
+    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/uniswap',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -12,7 +12,7 @@ export const client = new ApolloClient({
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://gap6p22o38.execute-api.eu-west-1.amazonaws.com/node/graphql', // /index-node for global nodes and :8030/graphql for self hosted
+    uri: 'https://graph.icecreamswap.com/node/graphql', // /index-node for global nodes and :8030/graphql for self hosted
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -20,7 +20,7 @@ export const healthClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://gap6p22o38.execute-api.eu-west-1.amazonaws.com/subgraphs/name/simone1999/ethereum-blocks',
+    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/ethereum-blocks',
   }),
   cache: new InMemoryCache(),
 })
