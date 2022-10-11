@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/uniswap',
+    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/bitgert-uniswap',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
@@ -20,7 +20,7 @@ export const healthClient = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/ethereum-blocks',
+    uri: 'https://graph.icecreamswap.com/subgraphs/name/simone1999/bitgert-blocks',
   }),
   cache: new InMemoryCache(),
 })
