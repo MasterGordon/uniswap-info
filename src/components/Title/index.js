@@ -47,13 +47,13 @@ export default function Title() {
     <TitleWrapper>
       <Flex alignItems="center" style={{ justifyContent: 'space-between' }}>
         <RowFixed>
-          <UniIcon id="link" href={"https://app.icecreamswap.com"}>
+          <UniIcon id="link" href={"https://icecreamswap.com"}>
             <img width={'24px'} src={Logo} alt="logo" />
           </UniIcon>
           {!below1080 && (
-              <a href={"https://app.icecreamswap.com"}>
-                <p style={{color: 'white'}}>ICECREAMSWAP</p>
-              </a>
+            <a href={"https://icecreamswap.com"}>
+              <p style={{ color: 'white' }}>ICECREAMSWAP</p>
+            </a>
           )}
         </RowFixed>
         {below1080 && (
